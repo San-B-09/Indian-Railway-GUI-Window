@@ -319,15 +319,6 @@ class LiveStatus(tk.Frame):
             station.set("")
             date.set("")
 
-        '''def show_text():
-            global trn, stan, dat
-            trn = input_train.get()
-            stan = station.get()
-            dat = date.get()
-            tk.Label(self, text = trn).grid(row = 4, column = 0)
-            tk.Label(self, text=stan).grid(row=5, column=0)
-            tk.Label(self, text=dat).grid(row=6, column=0)'''
-
         def train_status():
             global train_number, station_code, current_date, t
             train_number = input_train.get()
@@ -411,7 +402,7 @@ class LiveStatus(tk.Frame):
 
 def live_status():
     global train_number, station_code, current_date
-    api_key = "dcliff0rc4"
+    api_key = #"your_API_key"
 
     # base_url variable to store url
     base_url = "https://api.railwayapi.com/v2/live/train/"
@@ -446,12 +437,7 @@ def live_status():
         # the result variable data
         train_name = result["train"]["name"]
 
-        # store the value or data of
-        # "route" key in variable y
-        # y = result["route"]
 
-        # source station name is extracting
-        # from the y variable data
 
         # store the value of "position"
         # key in variable position
@@ -465,7 +451,7 @@ def live_status():
 
 
 def pnr_status():
-    api_key = "dcliff0rc4"
+    api_key = #"your_API_key"
     # base_url variable to store url
     base_url = "https://api.railwayapi.com/v2/pnr-status/pnr/"
 
@@ -537,36 +523,6 @@ def pnr_status():
 
         return [train_number, train_name, date_of_journey, from_station, to_station, reservation_upto, boarding_point], passengers_list
 
-        # print following values
-        '''print(" train name : " + str(train_name)
-          + "\n train number : " + str(train_number)
-          + "\n from station : " + str(from_station)
-          + "\n to station : " + str(to_station)
-          + "\n boarding point : " + str(boarding_point)
-          + "\n reservation upto : " + str(reservation_upto)
-          + "\n pnr number : " + str(pnr_num)
-          + "\n date of journey : " + str(date_of_journey)
-          + "\n total no. of passengers: " + str(total_passengers)
-          + "\n chart prepared : " + str(chart_prepared))
-
-        # looping through passenger list
-        for passenger in passengers_list:
-            # store the value or data
-            # of "no" key in variable
-            passenger_num = passenger["no"]
-
-            # store the value or data of
-            # "current_status" key in variable
-            current_status = passenger["current_status"]
-
-            # store the value or data of
-            # "booking_status" key in variable
-            booking_status = passenger["booking_status"]
-
-            # print following values
-            print(" passenger number : " + str(passenger_num)
-              + "\n current status : " + str(current_status)
-              + "\n booking_status : " + str(booking_status))'''
 
     else:
         return "record is not found for given request", "0"
